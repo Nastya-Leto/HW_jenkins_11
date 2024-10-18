@@ -1,5 +1,5 @@
 from pages.registration_page import RegistrationPage
-import os, allure
+import allure
 from path_config import RESOURCES_PATH
 
 
@@ -11,8 +11,6 @@ from path_config import RESOURCES_PATH
 @allure.suite('Проверка формы регистрации')
 def test_fill_form():
     registration_page = RegistrationPage()
-    #current_dir = os.path.dirname(__file__)
-    #download_picture = os.path.abspath(os.path.join(current_dir, '..', 'resources', 'image.jpg'))
 
     with allure.step('Открыть страницу формы'):
         registration_page.open('/automation-practice-form')
