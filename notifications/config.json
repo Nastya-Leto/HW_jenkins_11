@@ -1,9 +1,8 @@
 {
   "base": {
-    "logo": "resources/cat.jpg",
-    "project": "${JOB_BASE_NAME}",
+    "project": "${JOB_NAME}",
     "environment": "some env",
-    "comment": "Ура...",
+    "comment": "some comment",
     "reportLink": "${BUILD_URL}",
     "language": "en",
     "allureFolder": "allure-report",
