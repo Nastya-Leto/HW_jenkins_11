@@ -2,18 +2,21 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selene import browser
+from dotenv import load_dotenv
+import os
 
 from utils import attach
 
 
 @pytest.fixture(scope="session", autouse=True)
 def browser_settings():
+    load_dotenv()
+    selenoid_login = os.getenv('SELENOID_LOGIN')
+    selenoid_pass = os.getenv('SELENOID_PASS')
+    selenoid_url = os.getenv('SELENOID_URL')
     browser.config.base_url = 'https://demoqa.com'
     browser.config.window_height = 1080
     browser.config.window_width = 1920
-    selenoid_login = 'user1'
-    selenoid_pass = '1234'
-    selenoid_url = 'selenoid.autotests.cloud'
 
     options = Options()
     selenoid_capabilities = {
