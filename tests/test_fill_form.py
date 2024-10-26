@@ -1,8 +1,9 @@
 from pages.registration_page import RegistrationPage
 import allure
 from path_config import RESOURCES_PATH
+import pytest
 
-
+@pytest.mark.smoke
 @allure.tag('web')
 @allure.label("owner", 'zakharovaaa')
 @allure.feature('Форма регистрации студента')
